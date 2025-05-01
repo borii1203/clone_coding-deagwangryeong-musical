@@ -50,6 +50,12 @@ body {
   background-color: #F5F3EC;
   color: #111;
 }
+@media screen and (max-width: 1700px) {
+  html,
+  body {
+    font-size: 56.25%;
+  }
+}
 
 body.fixed {
   overflow: hidden;
@@ -59,6 +65,7 @@ body.fixed {
   max-width: 1700px;
   width: calc(100% - 40px);
   margin: 0 auto;
+  overflow: hidden;
 }
 
 h2,
@@ -72,13 +79,22 @@ h3 {
   font-size: 12rem;
   font-weight: 600;
 }
+@media screen and (max-width: 1700px) {
+  h3 {
+    font-size: 10rem;
+  }
+}
+@media screen and (max-width: 1350px) {
+  h3 {
+    font-size: 6.67rem;
+  }
+}
 
 h4 {
   font-family: "NanumMyeongjoExtraBold";
   font-size: 6.4rem;
   letter-spacing: -1.28px;
 }
-
 button {
   cursor: pointer;
 }
@@ -176,6 +192,9 @@ button {
 }
 .header .inner .nav_wrap .nav .gnb {
   display: flex;
+}
+.header .inner .nav_wrap .nav .gnb li {
+  filter: invert(0);
 }
 .header .inner .nav_wrap .nav .gnb li a {
   color: #fff;
@@ -328,7 +347,10 @@ button {
   height: 1px;
   position: absolute;
   bottom: -1px;
+  left: 50%;
+  transform: translateX(-50%);
   background-color: #fff;
+  transition: width 0.3s;
 }
 .header.scrolled {
   transform: translateY(-110%);
@@ -338,10 +360,13 @@ button {
 }
 .header.color a,
 .header.color button,
-.header.color li,
 .header.color img {
   filter: invert(0);
   color: #111 !important;
+}
+.header.color .inner::after {
+  width: 100vw;
+  background-color: #111;
 }
 .header.color .inner .btn_wrap .L_menu::after, .header.color .inner .btn_wrap .L_menu::before {
   content: "";
@@ -350,21 +375,8 @@ button {
 .header.color .inner .btn_wrap .L_menu span {
   background-color: #111;
 }
-.header.color::after {
-  content: "";
-  width: 100%;
-}
 .header.fixed {
   transform: translateY(0);
-}
-.header::after {
-  content: "";
-  width: 0;
-  height: 1px;
-  position: absolute;
-  bottom: -1px;
-  background-color: rgb(51, 51, 51);
-  transition: 0.7s;
 }
 @media screen and (max-width: 1200px) {
   .header .inner .nav_wrap nav {
@@ -484,6 +496,7 @@ button {
 .main_visual .inner {
   z-index: 9;
   position: relative;
+  overflow: visible;
 }
 .main_visual .inner .swiperBtn_wrap {
   position: absolute;
@@ -503,11 +516,31 @@ button {
 }
 .main_visual .inner .image img {
   animation: rotate 10s infinite linear;
+  width: 100%;
+  height: 100%;
 }
 .main_visual .inner .image::before {
   content: url("../img/scroll_arrow.svg");
   position: absolute;
   animation: updown 1.5s infinite linear;
+}
+@media screen and (max-width: 1700px) {
+  .main_visual .inner .swiperBtn_wrap {
+    bottom: 80px;
+  }
+  .main_visual .inner .image {
+    width: 130px;
+    bottom: 80px;
+  }
+}
+@media screen and (max-width: 1280px) {
+  .main_visual .inner .swiperBtn_wrap {
+    bottom: 60px;
+  }
+  .main_visual .inner .image {
+    width: 100px;
+    bottom: 60px;
+  }
 }
 
 /* section-01 */
@@ -549,6 +582,9 @@ button {
   justify-content: center;
   font-size: 1.4rem;
 }
+.section-01 .inner .date_wrap .calender .day-wrap .day span {
+  display: block;
+}
 .section-01 .inner .date_wrap .calender .day-wrap .day .num {
   width: 30px;
   height: 30px;
@@ -570,11 +606,14 @@ button {
   font-weight: 500;
 }
 .section-01 .info_wrap {
-  margin-left: 102.5px;
+  overflow: visible;
+  cursor: none !important;
+}
+.section-01 .info_wrap .concertSwiper {
+  overflow: visible;
 }
 .section-01 .info_wrap .concertSwiper .swiper-wrapper {
   align-items: flex-end;
-  cursor: none !important;
 }
 .section-01 .info_wrap .concertSwiper .swiper-wrapper .swiper-slide {
   width: 390px;
@@ -593,6 +632,7 @@ button {
 }
 .section-01 .info_wrap .concertSwiper .swiper-wrapper .swiper-slide a {
   width: 100%;
+  cursor: none !important;
 }
 .section-01 .info_wrap .concertSwiper .swiper-wrapper .swiper-slide a .image {
   width: 100%;
@@ -698,6 +738,12 @@ button {
   top: 50%;
   left: 0;
   transform: translateY(-50%);
+}
+@media screen and (max-width: 1700px) {
+  .section-01 .inner {
+    width: 100%;
+    padding: 0 20px;
+  }
 }
 
 /* section-02 */
@@ -911,6 +957,7 @@ button {
   .section-03 .inner .Youtube {
     max-width: 50%;
     margin: 20px;
+    margin-bottom: 70px;
   }
   .section-03 .inner .Notice {
     max-width: 50%;
@@ -923,9 +970,12 @@ button {
   }
   .section-03 .inner .Youtube {
     max-width: 100%;
+    margin: 0;
+    margin-bottom: 70px;
   }
   .section-03 .inner .Notice {
     max-width: 100%;
+    margin: 0;
   }
 }
 
@@ -989,11 +1039,12 @@ button {
   font-weight: 600;
   padding: 8px 0;
 }
-.footer .inner .left .footer_nav .gnb .depth-02 {
+.footer .inner .left .footer_nav .gnb .depth-02 a {
+  display: block;
+  padding: 6px 0;
   font-size: 1.6rem;
   font-weight: 300;
   color: rgba(255, 255, 255, 0.7);
-  padding: 6px 0;
 }
 .footer .inner .left .copy {
   font-size: 1.4rem;
@@ -1095,4 +1146,25 @@ button {
 .footer .inner .right .padding .R_bottom .logo a img {
   width: 100%;
   height: 100%;
+}
+@media screen and (max-width: 1700px) {
+  .footer .inner .left {
+    width: 60%;
+    padding: 70px 35px 50px 0;
+  }
+  .footer .inner .left .title {
+    margin-bottom: 40px;
+  }
+  .footer .inner .right {
+    width: 40%;
+    padding: 70px 20px 35px 35px;
+  }
+  .footer .inner .right .padding .R_bottom::before {
+    left: -35px;
+  }
+}
+@media screen and (max-width: 1400px) {
+  .footer .inner .left .title {
+    margin-bottom: 30px;
+  }
 }/*# sourceMappingURL=main.css.map */
