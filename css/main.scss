@@ -897,7 +897,7 @@ button {
             display: flex;
             align-items: center;
             justify-content: center;
-            z-index: 99;
+            z-index: 9;
 
             &::before {
                 width: 100%;
@@ -1162,6 +1162,7 @@ button {
 .footer {
     background-color: #121212;
     color: #fff;
+    overflow: hidden;
 
     .inner {
         display: flex;
@@ -1301,11 +1302,12 @@ button {
                     &::before {
                         content: '';
                         display: block;
-                        width: 100%;
+                        width: 100vw;
                         height: 1px;
                         background-color: rgba(255, 255, 255, 0.13);
                         position: absolute;
                         top: 0;
+                        left: -70px;
                     }
 
                     ul {
