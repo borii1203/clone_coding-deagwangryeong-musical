@@ -78,7 +78,19 @@
             $('.L_menu').on('click', function () {
                 $(this).toggleClass('menu_on');
                 $('body').toggleClass('fixed');
-                $('.L_nav').toggleClass('nav_slide nav_fade');
+                
+                if($(this).hasClass('menu_on')) {
+                    $('.L_nav').css({
+                    'transform' : 'translateX(0)',
+                    'opacity' : '1'
+                })
+                } else {
+                    $('.L_nav').css({
+                        'opacity' : '0',
+                        'transform' : 'translateX(100%)',
+                        'transition' : 'transform 0.1s 0.8s, opacity 0.8s'
+                    })
+                }
             });//큰메뉴 클릭시 네비게이션
 
             $('#top').on('click', function () {
