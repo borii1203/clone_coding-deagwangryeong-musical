@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>대관령 음악제(모작)</title>
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.scss">
+    <link rel="stylesheet" href="css/main.css">
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="lib/jquery-3.7.1.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        $(function () {
+            AOS.init();
+
+            $(window).on('mousemove', function (e) {
+                let x = e.pageX;
+                let y = e.pageY;
+
+                $('.cursor').css({
+                    'top': y,
+                    'left': x
+                });
+
+                $('.concertSwiper').on('mouseenter', function () {
+                    $('.cursor').addClass('mouse_event');
+                }).on('mouseleave', function () {
+                    $('.cursor').removeClass('mouse_event');
+                });
+            });//mousemove end
+            let prevScrollBar = 0;
+
+            $(window).on('scroll', function () {
+                let scrollBar = $(this).scrollTop();
+
+                if (scrollBar > prevScrollBar) {
+                    $('.header').addClass('scrolled');
+                } else {
+                    $('.header').removeClass('scrolled');
+                };
+                prevScrollBar = scrollBar;
+
+                if (scrollBar >= 800) {
+                    $('header').addClass('color');
+                } else {
+                    $('header').removeClass('color');
+                }
+
+            });//header scroll
+
+            $('nav .gnb > li').on('mouseenter', function () {
+                $(this).find('.depth-02').addClass('nav_down');
+                $(this).find('.depth-02 li a').addClass('nav_down');
+            }).on('mouseleave', function () {
+                $(this).find('.depth-02').removeClass('nav_down');
+                $(this).find('.depth-02 li a').removeClass('nav_down');
+            });//dpeht-02 메뉴 내려옴
+
+            $('.lang').on('mouseenter', function () {
+                $(this).find('.depth-02').addClass('nav_down');
+                $(this).find('.depth-02 li a').addClass('nav_down');
+            }).on('mouseleave', function () {
+                $(this).find('.depth-02').removeClass('nav_down');
+                $(this).find('.depth-02 li a').removeClass('nav_down');
+            });//depth-02 언어 내려옴
+
+            $('.search').on('click', function () {
+                $('.search_box').toggleClass('search_scrolled');
+                $('.header').toggleClass('fixed color');
+            });//검색창
+
+            $('.L_menu').on('click', function () {
+                $(this).toggleClass('menu_on');
+                $('body').toggleClass('fixed');
+                $('.L_nav').toggleClass('nav_slide nav_fade');
+            });//큰메뉴 클릭시 네비게이션
+
+            $('#top').on('click', function () {
+                $('html, body').animate({
+                    scrollTop: 0
+                }, 1000)
+            });//top버튼
+
+            var swiper = new Swiper(".mainSwiper", {
+                effect: "fade",
+                loop: "ture",
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                },
+                autoplay: {
+                    delay: 4500,
+                    disableOnInteraction: false,
+                },
+                speed: 2500
+            });
+
+            var swiper = new Swiper(".concertSwiper", {
+                slidesPerView: 2,
+                spaceBetween: 20,
+                loop: "ture",
+                autoplay: {
+                    delay: 4500,
+                    disableOnInteraction: false,
+                },
+                speed: 2500,
+                breakpoints: {
+                    800: {
+                        slidesPerView: 3,
+                        spaceBetween: 20,
+                    },
+                    1100: {
+                        slidesPerView: 4,
+                        spaceBetween: 20,
+                    },
+                    1200: {
+                        slidesPerView: 4.2,
+                        spaceBetween: 47,
+                    },
+                },
+            });
+
+            var swiper = new Swiper(".vertSwiper", {
+                slidesPerView: "auto",
+                spaceBetween: 50,
+                direction: "vertical",
+                loop: "ture",
+                speed: 9000,
+                autoplay: {
+                    delay: 0,
+                    disableOnInteraction: false,
+                },
+            });
+
+            var swiper = new Swiper(".vertSwiper_rev", {
+                slidesPerView: "auto",
+                spaceBetween: 50,
+                direction: "vertical",
+                loop: "true",
+                speed: 9000,
+                freeMode: true,
+                autoplay: {
+                    delay: 0,
+                    disableOnInteraction: false,
+                    reverseDirection: true
+                },
+            });
+
+            var swiper = new Swiper(".logoSwiper", {
+                slidesPerView: "auto",
+                spaceBetween: 120,
+                loop: "true",
+                speed: 3500,
+                autoplay: {
+                    delay: 0,
+                    disableOnInteraction: false,
+                },
+            });
+        });//script end
+    </script>
+</head>
+
+<body>
+    <div class="cursor">
+        <div class="inner"></div>
+    </div>
+    <header class="header">
+        <div class="inner">
+            <div class="nav_wrap">
+                <h1 class="logo">
+                    <img src="img/mipc_logo.svg" alt="">
+                </h1><!-- .logo end -->
+
+                <nav class="nav">
+                    <ul class="gnb">
+                        <li>
+                            <a href="#">공연</a>
+                            <ul class="depth-02">
+                                <li><a href="#">공연 캘린더</a></li>
+                                <li><a href="#">공연 예매</a></li>
+                                <li><a href="#">패키지 예매</a></li>
+                                <li><a href="#">예매 안내사항</a></li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="#">교육</a>
+                            <ul class="depth-02">
+                                <li><a href="#">시즌 교육프로그램</a></li>
+                                <li><a href="#">연중 교육프로그램</a></li>
+                                <li><a href="#">영 아티스트 콘서트</a></li>
+                                <li><a href="#">지원·신청</a></li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="#">소식</a>
+                            <ul class="depth-02">
+                                <li><a href="#">공지사항</a></li>
+                                <li><a href="#">뉴스</a></li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="#">대관령음악제</a>
+                            <ul class="depth-02">
+                                <li><a href="#">소개</a></li>
+                                <li><a href="#">예술감독</a></li>
+                                <li><a href="#">조직도</a></li>
+                                <li><a href="#">후원 및 협력사</a></li>
+                                <li><a href="#">문의</a></li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="#">아카이브</a>
+                            <ul class="depth-02">
+                                <li><a href="#">평창대관령음악제</a></li>
+                                <li><a href="#">기획공연</a></li>
+                                <li><a href="#">교육사업</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav><!-- .nav end -->
+            </div><!-- .nav_wrap end -->
+
+            <div class="btn_wrap">
+                <a href="#"><img src="img/mypage_icon.svg" alt=""></a>
+
+                <button type="button" class="lang">
+                    <img src="img/lang_icon.svg" alt="">
+
+                    <ul class="depth-02">
+                        <li><a href="#">KR</a></li>
+                        <li><a href="#">EN</a></li>
+                    </ul>
+                </button>
+
+                <button type="button" class="search">
+                    <img src="img/search_icon.svg" alt="">
+                </button>
+
+                <button type="button" class="L_menu">
+                    <span></span>
+                </button>
+            </div><!-- .btn_wrap end -->
+        </div><!-- .inner end -->
+
+        <div class="L_nav">
+            <ul>
+                <li><a href="#">공연</a></li>
+                <li><a href="#">교육</a></li>
+                <li><a href="#">소식</a></li>
+                <li><a href="#">대관령음악제</a></li>
+                <li><a href="#">아카이브</a></li>
+            </ul>
+        </div><!-- .nav end -->
+    </header><!-- .header end -->
+
+    <div class="search_box">
+        <div class="padding">
+            <div class="text_wrap">
+                <input type="text" placeholder="검색어를 입력하세요">
+                <button type="button"><img src="img/search_icon.svg" alt="검색어를 입력하세요"></button>
+            </div><!-- .text_wrap end -->
+        </div><!-- .padding end -->
+    </div><!-- .search_box end -->
+
+    <main class="main">
+        <section class="main_visual">
+            <!-- mainSwiper -->
+            <div class="swiper mainSwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="img/main-01.png" alt=""></div>
+                    <div class="swiper-slide"><img src="img/main-02.png" alt=""></div>
+                    <div class="swiper-slide">
+                        <img src="img/main-03.png" alt="">
+                        <div class="text">
+                            <h2>Music in PyeongChang</h2>
+                            <p>대관령음악제, 강원특별자치도의 아름다운 대자연 속에서 펼쳐지는 아름다운 클래식 선율을 만나보세요.</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="img/main-04.png" alt="">
+                        <div class="text">
+                            <h2>Music in PyeongChang</h2>
+                            <p>대관령음악제, 강원특별자치도의 아름다운 대자연 속에서 펼쳐지는 아름다운 클래식 선율을 만나보세요.</p>
+                        </div>
+                    </div>
+                </div><!-- .swiper-wrapper end -->
+            </div><!-- .mainSwiper end -->
+
+            <div class="inner">
+                <div class="swiperBtn_wrap">
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                </div>
+
+                <div class="image">
+                    <img src="img/scroll_down.svg" alt="">
+                </div><!-- .image end -->
+            </div><!-- .inner end -->
+        </section><!-- .main_visual end -->
+
+        <section class="section-01">
+            <div class="inner">
+                <h3 data-aos="fade-in" data-aos-duration="1000">Concerts</h3>
+
+                <div class="date_wrap">
+                    <p data-aos="fade-right">2025.Apr</p>
+
+                    <div class="calender" data-aos="fade-up">
+                        <div class="slide" data-aos="fade-up" data-aos-anchor=".flex-box">
+                            <div class="day-wrap">
+                                <div class="day ">
+                                    <span>MON</span>
+                                    <span class="num" data-day="28">28</span>
+                                </div>
+                                <div class="day ">
+                                    <span>TUE</span>
+                                    <span class="num" data-day="29">29</span>
+                                </div>
+                                <div class="day ">
+                                    <span>WED</span>
+                                    <span class="num" data-day="30">30</span>
+                                </div>
+                                <div class="day ">
+                                    <span>THU</span>
+                                    <span class="num" data-day="01">01</span>
+                                </div>
+                                <div class="day ">
+                                    <span>FRI</span>
+                                    <span class="num" data-day="02">02</span>
+                                    <ul>
+                                    </ul>
+                                </div>
+                                <div class="day ">
+                                    <span>SAT</span>
+                                    <span class="num" data-day="03">03</span>
+                                </div>
+                                <div class="day ">
+                                    <span>SUN</span>
+                                    <span class="num" data-day="04">04</span>
+                                </div>
+                                <div class="day ">
+                                    <span>MON</span>
+                                    <span class="num" data-day="05">05</span>
+                                </div>
+                                <div class="day ">
+                                    <span>TUE</span>
+                                    <span class="num" data-day="06">06</span>
+                                </div>
+                                <div class="day ">
+                                    <span>WED</span>
+                                    <span class="num" data-day="07">07</span>
+                                </div>
+                                <div class="day ">
+                                    <span>THU</span>
+                                    <span class="num" data-day="08">08</span>
+                                </div>
+                                <div class="day ">
+                                    <span>FRI</span>
+                                    <span class="num" data-day="09">09</span>
+                                </div>
+                                <div class="day ">
+                                    <span>SAT</span>
+                                    <span class="num" data-day="10">10</span>
+                                </div>
+                                <div class="day ">
+                                    <span>SUN</span>
+                                    <span class="num" data-day="11">11</span>
+                                </div>
+                                <div class="day ">
+                                    <span>MON</span>
+                                    <span class="num" data-day="12">12</span>
+                                </div>
+                                <div class="day ">
+                                    <span>TUE</span>
+                                    <span class="num" data-day="13">13</span>
+                                </div>
+                                <div class="day ">
+                                    <span>WED</span>
+                                    <span class="num" data-day="14">14</span>
+                                </div>
+                                <div class="day ">
+                                    <span>THU</span>
+                                    <span class="num" data-day="15">15</span>
+                                </div>
+                                <div class="day ">
+                                    <span>FRI</span>
+                                    <span class="num" data-day="16">16</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- .calender end -->
+
+                    <a href="#" data-aos="fade-left">전체보기</a>
+                </div><!-- .date_wrap end -->
+            </div><!-- .inner end -->
+
+
+            <div class="info_wrap" data-aos="fade-up" data-aos-duration="1000">
+                <!-- Swiper -->
+                <div class="swiper concertSwiper">
+                    <div class="swiper-wrapper">
+
+                        <div class="swiper-slide">
+                            <a href="#">
+                                <div class="image">
+                                    <img src="img/card-01.jpg" alt="">
+                                    <div class="hover_text">
+                                        <div class="padding">
+                                            <p>Concert #1 개막공연 '부활'</p>
+                                            <span>Opening Concert "Resurrection"</span>
+                                            <ul>
+                                                <li>대관령 야외공연장 Music Tent</li>
+                                                <li>2025-07-23</li>
+                                            </ul>
+                                        </div>
+                                    </div><!-- .hover_text end -->
+                                </div><!-- .image end -->
+
+                                <div class="info_text">
+                                    <p>Concert #1 개막공연 '부활'</p>
+                                    <span>Opening Concert "Resurrection"</span>
+                                    <ul>
+                                        <li class="location">대관령 야외공연장 Music Tent</li>
+                                        <li class="date">2025-07-23</li>
+                                    </ul>
+                                </div><!-- .info_text end -->
+                            </a>
+                        </div><!-- .swiper-slide end -->
+
+                        <div class="swiper-slide">
+                            <a href="#">
+                                <div class="image">
+                                    <img src="img/card-02.jpg" alt="">
+                                    <div class="hover_text">
+                                        <div class="padding">
+                                            <p>Concert #2 부에노스아이레스의 밤, 이베리아의 새벽</p>
+                                            <span>Night in Buenos Aires, Dawn in Andalusia</span>
+                                            <ul>
+                                                <li>알펜시아 콘서트홀</li>
+                                                <li>2025-07-24</li>
+                                            </ul>
+                                        </div>
+                                    </div><!-- .hover_text end -->
+                                </div><!-- .image end -->
+
+                                <div class="info_text">
+                                    <p>Concert #2 부에노스아이레스의 밤, 이베리아의 새벽</p>
+                                    <span>Night in Buenos Aires, Dawn in Andalusia</span>
+                                    <ul>
+                                        <li class="location">알펜시아 콘서트홀</li>
+                                        <li class="date">2025-07-24</li>
+                                    </ul>
+                                </div><!-- .info_text end -->
+                            </a>
+                        </div><!-- .swiper-slide end -->
+
+                        <div class="swiper-slide">
+                            <a href="#">
+                                <div class="image">
+                                    <img src="img/card-03.jpg" alt="">
+                                    <div class="hover_text">
+                                        <div class="padding">
+                                            <p>Concert #3 국경을 넘는 하모니</p>
+                                            <span>Harmony Beyond Borders</span>
+                                            <ul>
+                                                <li>알펜시아 콘서트홀</li>
+                                                <li>2025-07-24</li>
+                                            </ul>
+                                        </div>
+                                    </div><!-- .hover_text end -->
+                                </div><!-- .image end -->
+
+                                <div class="info_text">
+                                    <p>Concert #3 국경을 넘는 하모니</p>
+                                    <span>Harmony Beyond Borders</span>
+                                    <ul>
+                                        <li class="location">알펜시아 콘서트홀</li>
+                                        <li class="date">2025-07-24</li>
+                                    </ul>
+                                </div><!-- .info_text end -->
+                            </a>
+                        </div><!-- .swiper-slide end -->
+
+                        <div class="swiper-slide">
+                            <a href="#">
+                                <div class="image">
+                                    <img src="img/card-04.png" alt="">
+                                    <div class="hover_text">
+                                        <div class="padding">
+                                            <p>Concert #4 평창의 세레나데</p>
+                                            <span>Serenades and Fantasies</span>
+                                            <ul>
+                                                <li>알펜시아 콘서트홀</li>
+                                                <li>2025-07-25</li>
+                                            </ul>
+                                        </div>
+                                    </div><!-- .hover_text end -->
+                                </div><!-- .image end -->
+
+                                <div class="info_text">
+                                    <p>Concert #4 평창의 세레나데</p>
+                                    <span>Serenades and Fantasies</span>
+                                    <ul>
+                                        <li class="location">알펜시아 콘서트홀</li>
+                                        <li class="date">2025-07-25</li>
+                                    </ul>
+                                </div><!-- .info_text end -->
+                            </a>
+                        </div><!-- .swiper-slide end -->
+
+                        <div class="swiper-slide">
+                            <a href="#">
+                                <div class="image">
+                                    <img src="img/card-05.png" alt="">
+                                    <div class="hover_text">
+                                        <div class="padding">
+                                            <p>Concert #5 평창페스티벌스트링즈 - 고대의 찬가, 현대의 리듬</p>
+                                            <span>Ancient Chants to Modern Rhythms</span>
+                                            <ul>
+                                                <li>알펜시아 콘서트홀</li>
+                                                <li>2025-07-25</li>
+                                            </ul>
+                                        </div>
+                                    </div><!-- .hover_text end -->
+                                </div><!-- .image end -->
+
+                                <div class="info_text">
+                                    <p>Concert #5 평창페스티벌스트링즈 - 고대의 찬가, 현대의 리듬</p>
+                                    <span>Ancient Chants to Modern Rhythms</span>
+                                    <ul>
+                                        <li class="location">알펜시아 콘서트홀</li>
+                                        <li class="date">2025-07-25</li>
+                                    </ul>
+                                </div><!-- .info_text end -->
+                            </a>
+                        </div><!-- .swiper-slide end -->
+
+                        <div class="swiper-slide">
+                            <a href="#">
+                                <div class="image">
+                                    <img src="img/card-06.jpg" alt="">
+                                    <div class="hover_text">
+                                        <div class="padding">
+                                            <p>Concert #6 프랑스 낭만의 선율</p>
+                                            <span>Melodies of French Romance</span>
+                                            <ul>
+                                                <li>알펜시아 콘서트홀</li>
+                                                <li>2025-07-26</li>
+                                            </ul>
+                                        </div>
+                                    </div><!-- .hover_text end -->
+                                </div><!-- .image end -->
+
+                                <div class="info_text">
+                                    <p>Concert #6 프랑스 낭만의 선율</p>
+                                    <span>Melodies of French Romance</span>
+                                    <ul>
+                                        <li class="location">알펜시아 콘서트홀</li>
+                                        <li class="date">2025-07-26</li>
+                                    </ul>
+                                </div><!-- .info_text end -->
+                            </a>
+                        </div><!-- .swiper-slide end -->
+
+                        <div class="swiper-slide">
+                            <a href="#">
+                                <div class="image">
+                                    <img src="img/card-07.jpg" alt="">
+                                    <div class="hover_text">
+                                        <div class="padding">
+                                            <p>Concert #7 리듬, 신화, 춤</p>
+                                            <span>Rhythms, Myths, and Dances</span>
+                                            <ul>
+                                                <li>알펜시아 콘서트홀</li>
+                                                <li>2025-07-26</li>
+                                            </ul>
+                                        </div>
+                                    </div><!-- .hover_text end -->
+                                </div><!-- .image end -->
+
+                                <div class="info_text">
+                                    <p>Concert #7 리듬, 신화, 춤</p>
+                                    <span>Rhythms, Myths, and Dances</span>
+                                    <ul>
+                                        <li class="location">알펜시아 콘서트홀</li>
+                                        <li class="date">2025-07-26</li>
+                                    </ul>
+                                </div><!-- .info_text end -->
+                            </a>
+                        </div><!-- .swiper-slide end -->
+
+                        <div class="swiper-slide">
+                            <a href="#">
+                                <div class="image">
+                                    <img src="img/card-08.jpg" alt="">
+                                    <div class="hover_text">
+                                        <div class="padding">
+                                            <p>Concert #8 평창페스티벌체임버오케스트라 - 섬, 제국 그리고 우아함</p>
+                                            <span>Islands, Empires, and Elegance</span>
+                                            <ul>
+                                                <li>알펜시아 콘서트홀</li>
+                                                <li>2025-07-27</li>
+                                            </ul>
+                                        </div>
+                                    </div><!-- .hover_text end -->
+                                </div><!-- .image end -->
+
+                                <div class="info_text">
+                                    <p>Concert #8 평창페스티벌체임버오케스트라 - 섬, 제국 그리고 우아함</p>
+                                    <span>Islands, Empires, and Elegance</span>
+                                    <ul>
+                                        <li class="location">알펜시아 콘서트홀</li>
+                                        <li class="date">2025-07-27</li>
+                                    </ul>
+                                </div><!-- .info_text end -->
+                            </a>
+                        </div><!-- .swiper-slide end -->
+
+                        <div class="swiper-slide">
+                            <a href="#">
+                                <div class="image">
+                                    <img src="img/card-09.jpg" alt="">
+                                    <div class="hover_text">
+                                        <div class="padding">
+                                            <p>Concert #9 운명과 희망</p>
+                                            <span>Fate and Hope</span>
+                                            <ul>
+                                                <li>대관령 야외공연장 Music Tent</li>
+                                                <li>2025-07-27</li>
+                                            </ul>
+                                        </div>
+                                    </div><!-- .hover_text end -->
+                                </div><!-- .image end -->
+
+                                <div class="info_text">
+                                    <p>Concert #9 운명과 희망</p>
+                                    <span>Fate and Hope</span>
+                                    <ul>
+                                        <li class="location">대관령 야외공연장 Music Tent</li>
+                                        <li class="date">2025-07-27</li>
+                                    </ul>
+                                </div><!-- .info_text end -->
+                            </a>
+                        </div><!-- .swiper-slide end -->
+
+                        <div class="swiper-slide">
+                            <a href="#">
+                                <div class="image">
+                                    <img src="img/card-10.jpg" alt="">
+                                    <div class="hover_text">
+                                        <div class="padding">
+                                            <p>강원의 사계 &lt;여름&gt;</p>
+                                            <span>피아노 듀오 신박</span>
+                                            <ul>
+                                                <li>원주 치악예술관</li>
+                                                <li>2025-06-29</li>
+                                            </ul>
+                                        </div>
+                                    </div><!-- .hover_text end -->
+                                </div><!-- .image end -->
+
+                                <div class="info_text">
+                                    <p>강원의 사계 &lt;여름&gt;</p>
+                                    <span>피아노 듀오 신박</span>
+                                    <ul>
+                                        <li class="location">원주 치악예술관</li>
+                                        <li class="date">2025-06-29</li>
+                                    </ul>
+                                </div><!-- .info_text end -->
+                            </a>
+                        </div><!-- .swiper-slide end -->
+
+                    </div><!-- .swiper-wrapper end -->
+                </div><!-- .swiper end -->
+            </div><!-- .info_wrap end -->
+
+        </section><!-- .section-01 end -->
+
+        <section class="section-02">
+            <div class="inner">
+                <div class="text">
+                    <h3 data-aos="fade-in" data-aos-duration="1000">MPyC Academy</h3>
+                    <p data-aos="fade-up" data-aos-duration="1000">대관령아카데미는 명연주자들의 가르침을 통해 젊은 음악가들에게 성장의 기회를 제공하는 교육
+                        프로그램입니다.</p>
+                </div><!-- .text end -->
+
+                <div class="item_wrap">
+                    <!-- Swiper -->
+                    <div class="swiper vertSwiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img src="img/academy01.jpg" alt=""></div>
+                            <div class="swiper-slide"><img src="img/academy02.jpg" alt=""></div>
+                            <div class="swiper-slide"><img src="img/academy03.jpg" alt=""></div>
+                        </div><!-- .swiper-wrapper end -->
+                    </div><!-- .vertSwiper end -->
+
+                    <div class="swiper vertSwiper_rev">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img src="img/academy04.jpg" alt=""></div>
+                            <div class="swiper-slide"><img src="img/academy05.jpg" alt=""></div>
+                            <div class="swiper-slide"><img src="img/academy06.jpg" alt=""></div>
+                        </div><!-- .swiper-wrapper end -->
+                    </div><!-- .vertSwiper end -->
+                </div><!-- .item_wrap end -->
+
+                <a href="#">
+                    <img src="img/scroll_arrow.svg" alt="">
+                </a>
+            </div><!-- .inner end -->
+        </section><!-- .section-02 end -->
+
+        <section class="section-03">
+            <div class="inner">
+                <div class="Youtube" data-aos="fade-right" data-aos-duration="1000">
+                    <h4>Youtube</h4>
+
+                    <div class="youtube_wrap">
+                        <iframe width="560" height="315"
+                            src="https://www.youtube.com/embed/0vdBnXgYz4o?si=_lQoh7uu1Of58avE"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div><!-- .youtube_wrap -->
+                </div><!-- .Youtube end -->
+
+                <div class="Notice" data-aos="fade-left" data-aos-duration="1000">
+                    <div class="text">
+                        <h4>Notice</h4>
+
+                        <a href="#"><img src="img/scroll_arrow.svg" alt=""></a>
+                    </div><!-- .text end -->
+
+                    <div class="info_wrap">
+                        <div class="info badge_br">
+                            <a href="#">
+                                <p>[2025 대관령아카데미] 연중 교육프로그램 “찾아가는 마스터클래스” 피아니스트 신미정 초청</p>
+                                <span>2025.04.28</span>
+                            </a>
+                        </div><!-- .info end -->
+
+                        <div class="info badge_bl">
+                            <a href="#">
+                                <p>[2025 평창대관령음악제] 티켓 패키지 안내(* 선착순 판매)</p>
+                                <span>2025.04.25</span>
+                            </a>
+                        </div><!-- .info end -->
+
+                        <div class="info badge_bl">
+                            <a href="#">
+                                <p>[2025 평창대관령음악제] 콘서트 티켓 할인 혜택 안내</p>
+                                <span>2025.04.23</span>
+                            </a>
+                        </div><!-- .info end -->
+
+                        <div class="info badge_br">
+                            <a href="#">
+                                <p>[강원도민일보] 낯섦과 익숙함 경계에 선 클래식, 무대 오른다</p>
+                                <span>2025.04.22</span>
+                            </a>
+                        </div><!-- .info end -->
+
+                        <div class="info badge_bl">
+                            <a href="#">
+                                <p>[2025 평창대관령음악제] 콘서트 11~21 프로그램 안내</p>
+                                <span>2025.04.15</span>
+                            </a>
+                        </div><!-- .info end -->
+                    </div><!-- .info_wrap end -->
+                </div><!-- .Notice end -->
+            </div><!-- .inner end -->
+        </section><!-- section-03 end -->
+
+        <section class="section-04">
+            <!-- Swiper -->
+            <div class="swiper logoSwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="img/sponsor_img01.png" alt="" class="hover">
+                        <img src="img/sponsor_hover01.png" alt="">
+                    </div><!-- .swiper-slide end -->
+
+                    <div class="swiper-slide">
+                        <img src="img/sponsor_img02.png" alt="" class="hover">
+                        <img src="img/sponsor_hover02.png" alt="">
+                    </div><!-- .swiper-slide end -->
+
+                    <div class="swiper-slide">
+                        <img src="img/sponsor_img03.png" alt="" class="hover">
+                        <img src="img/sponsor_hover03.png" alt="">
+                    </div><!-- .swiper-slide end -->
+
+                    <div class="swiper-slide">
+                        <img src="img/sponsor_img05.png" alt="" class="hover">
+                        <img src="img/sponsor_hover05.png" alt="">
+                    </div><!-- .swiper-slide end -->
+
+                    <div class="swiper-slide">
+                        <img src="img/sponsor_img06.png" alt="" class="hover">
+                        <img src="img/sponsor_hover06.png" alt="">
+                    </div><!-- .swiper-slide end -->
+
+                    <div class="swiper-slide">
+                        <img src="img/sponsor_img07.png" alt="" class="hover">
+                        <img src="img/sponsor_hover07.png" alt="">
+                    </div><!-- .swiper-slide end -->
+
+                    <div class="swiper-slide">
+                        <img src="img/sponsor_img08.png" alt="" class="hover">
+                        <img src="img/sponsor_hover08.png" alt="">
+                    </div><!-- .swiper-slide end -->
+
+                    <div class="swiper-slide">
+                        <img src="img/sponsor_img09.png" alt="" class="hover">
+                        <img src="img/sponsor_hover09.png" alt="">
+                    </div><!-- .swiper-slide end -->
+
+                    <div class="swiper-slide">
+                        <img src="img/sponsor_img10.png" alt="" class="hover">
+                        <img src="img/sponsor_hover10.png" alt="">
+                    </div><!-- .swiper-slide end -->
+
+                    <div class="swiper-slide">
+                        <img src="img/sponsor_img11.png" alt="" class="hover">
+                        <img src="img/sponsor_hover11.png" alt="">
+                    </div><!-- .swiper-slide end -->
+
+                    <div class="swiper-slide">
+                        <img src="img/sponsor_img12.png" alt="" class="hover">
+                        <img src="img/sponsor_hover12.png" alt="">
+                    </div><!-- .swiper-slide end -->
+
+                    <div class="swiper-slide">
+                        <img src="img/sponsor_img13.png" alt="" class="hover">
+                        <img src="img/sponsor_hover13.png" alt="">
+                    </div><!-- .swiper-slide end -->
+
+                    <div class="swiper-slide">
+                        <img src="img/sponsor_img14.png" alt="" class="hover">
+                        <img src="img/sponsor_hover14.png" alt="">
+                    </div><!-- .swiper-slide end -->
+
+                    <div class="swiper-slide">
+                        <img src="img/sponsor_img15.png" alt="" class="hover">
+                        <img src="img/sponsor_hover15.png" alt="">
+                    </div><!-- .swiper-slide end -->
+
+                    <div class="swiper-slide">
+                        <img src="img/sponsor_img16.png" alt="" class="hover">
+                        <img src="img/sponsor_hover16.png" alt="">
+                    </div><!-- .swiper-slide end -->
+
+                    <div class="swiper-slide">
+                        <img src="img/sponsor_img17.png" alt="" class="hover">
+                        <img src="img/sponsor_hover17.png" alt="">
+                    </div><!-- .swiper-slide end -->
+
+                    <div class="swiper-slide">
+                        <img src="img/sponsor_img18.png" alt="" class="hover">
+                        <img src="img/sponsor_hover18.png" alt="">
+                    </div><!-- .swiper-slide end -->
+                </div><!-- .logoSwiper end -->
+        </section><!-- .section-04 end -->
+    </main><!-- .main end -->
+
+    <footer class="footer">
+        <div class="inner">
+            <div class="left">
+                <p class="title">(재)강원문화재단 대관령음악제운영실</p>
+
+                <div class="footer_nav">
+                    <ul class="gnb">
+                        <li>
+                            <a href="#" class="depth-01">공연</a>
+                            <ul class="depth-02">
+                                <li><a href="#">공연 캘린더</a></li>
+                                <li><a href="#">공연 예매</a></li>
+                                <li><a href="#">패키지 예매</a></li>
+                                <li><a href="#">예매 안내사항</a></li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="#" class="depth-01">교육</a>
+                            <ul class="depth-02">
+                                <li><a href="#">시즌 교육프로그램</a></li>
+                                <li><a href="#">연중 교육프로그램</a></li>
+                                <li><a href="#">영 아티스트 콘서트</a></li>
+                                <li><a href="#">지원·신청</a></li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="#" class="depth-01">소식</a>
+                            <ul class="depth-02">
+                                <li><a href="#">공지사항</a></li>
+                                <li><a href="#">뉴스</a></li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="#" class="depth-01">대관령음악제</a>
+                            <ul class="depth-02">
+                                <li><a href="#">소개</a></li>
+                                <li><a href="#">예술감독</a></li>
+                                <li><a href="#">조직도</a></li>
+                                <li><a href="#">후원 및 협력사</a></li>
+                                <li><a href="#">문의</a></li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="#" class="depth-01">아카이브</a>
+                            <ul class="depth-02">
+                                <li><a href="#">평창대관령음악제</a></li>
+                                <li><a href="#">기획공연</a></li>
+                                <li><a href="#">교육사업</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div><!-- .footer_nav end -->
+
+                <p class="copy">Copyright (c) Music in PyeongChang. All right reserved.</p>
+            </div><!-- .left end -->
+
+            <div class="right">
+                <div class="padding">
+                    <div class="R_top">
+                        <div class="info">
+                            <div>
+                                <p>ADDRESS</p>
+                                <span>강원특별자치도 춘천시 안마산로 85, 4층</span>
+                            </div>
+
+                            <div>
+                                <p>TEL</p>
+                                <span>033-240-1364</span>
+                            </div>
+
+                            <div>
+                                <p>EMAIL</p>
+                                <span>op@mpyc.kr</span>
+                            </div>
+                        </div><!-- .info end -->
+
+                        <ul>
+                            <li><a href="#">이용약관</a></li>
+                            <li><a href="#">개인정보처리방침</a></li>
+                            <li><a href="#">강원문화재단</a></li>
+                        </ul>
+
+                        <button class="top" id="top">
+                            <div class="btn_wrap"><span>SCROLL TO TOP</span></div>
+                        </button>
+                    </div><!-- .R_top end -->
+
+                    <div class="R_bottom">
+                        <ul class="sns">
+                            <li><a href="#"><img src="img/youtube_icon.svg" alt="youtube"></a></li>
+                            <li><a href="#"><img src="img/facebook_icon.svg" alt="facebook"></a></li>
+                            <li><a href="#"><img src="img/insta_icon.svg" alt="instagram"></a></li>
+                        </ul>
+
+                        <div class="logo">
+                            <a href=""><img src="img/mipc_logo.svg" alt="logo"></a>
+                        </div>
+                    </div><!-- R_bottom end -->
+                </div><!-- .padding end -->
+            </div><!-- .right end -->
+        </div><!-- .inner end -->
+    </footer><!-- .footer end -->
+</body>
+
+</html>
