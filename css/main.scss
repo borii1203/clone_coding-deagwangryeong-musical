@@ -495,6 +495,30 @@ button {
         opacity: 1;
         transition: transform 0.8s, opacity 0.3s
     }
+
+    @media screen and (max-width:1700px) {
+        padding: 80px 20px 0 60px;
+        ul {
+            li {
+                a {
+                    font-size: 5rem;
+
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width:1280px) {
+        padding: 68px 20px 0 40px;
+        ul {
+            li {
+                a {
+                    font-size: 3.8rem;
+                    padding-block: 25px;
+                }
+            }
+        }
+    }
 }
 
 /* search_box */
@@ -1152,6 +1176,18 @@ button {
             }
         }
     }
+    @media screen and (max-width: 1700px) {
+        .inner {
+            .Notice {
+                .text {
+                    a {
+                        width: 60px;
+                        height: 60px;
+                    }
+                }
+            }
+        }
+    }
 
     @media screen and (max-width: 1500px) {
         .inner {
@@ -1181,6 +1217,12 @@ button {
             .Notice {
                 max-width: 100%;
                 margin: 0;
+                .text {
+                    a {
+                        width: 50px;
+                        height: 50px;
+                    }
+                }
             }
         }
     }

@@ -414,6 +414,23 @@ button {
   opacity: 1;
   transition: transform 0.8s, opacity 0.3s;
 }
+@media screen and (max-width: 1700px) {
+  .L_nav {
+    padding: 80px 20px 0 60px;
+  }
+  .L_nav ul li a {
+    font-size: 5rem;
+  }
+}
+@media screen and (max-width: 1280px) {
+  .L_nav {
+    padding: 68px 20px 0 40px;
+  }
+  .L_nav ul li a {
+    font-size: 3.8rem;
+    padding-block: 25px;
+  }
+}
 
 /* search_box */
 .search_box {
@@ -953,6 +970,12 @@ button {
   top: 50%;
   transform: translateY(-50%);
 }
+@media screen and (max-width: 1700px) {
+  .section-03 .inner .Notice .text a {
+    width: 60px;
+    height: 60px;
+  }
+}
 @media screen and (max-width: 1500px) {
   .section-03 .inner .Youtube {
     max-width: 50%;
@@ -976,6 +999,10 @@ button {
   .section-03 .inner .Notice {
     max-width: 100%;
     margin: 0;
+  }
+  .section-03 .inner .Notice .text a {
+    width: 50px;
+    height: 50px;
   }
 }
 
