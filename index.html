@@ -78,18 +78,20 @@
             $('.L_menu').on('click', function () {
                 $(this).toggleClass('menu_on');
                 $('body').toggleClass('fixed');
-                
-                if($(this).hasClass('menu_on')) {
-                    $('.L_nav').css({
-                    'transform' : 'translateX(0)',
-                    'opacity' : '1'
-                })
+
+                if ($(this).hasClass('menu_on')) {
+                    $('.L_nav').stop(true, true);
+                    $('.L_nav').removeClass('nav_slide');
+                    $('.L_nav').addClass('nav_fade');
+                    setTimeout(() => {
+                        $('.L_nav').addClass('nav_slide');
+                    }, 300);
                 } else {
-                    $('.L_nav').css({
-                        'opacity' : '0',
-                        'transform' : 'translateX(100%)',
-                        'transition' : 'transform 0.1s 0.8s, opacity 0.8s'
-                    })
+                    $('.L_nav').stop(true, true);
+                    $('.L_nav').removeClass('nav_fade');
+                    setTimeout(() => {
+                        $('.L_nav').removeClass('nav_slide');
+                    }, 800);
                 }
             });//큰메뉴 클릭시 네비게이션
 
