@@ -182,6 +182,7 @@ button {
   display: flex;
   justify-content: space-between;
   position: relative;
+  overflow: visible;
 }
 .header .inner .nav_wrap {
   display: flex;
@@ -724,6 +725,9 @@ button {
   font-size: 1.7rem;
   font-weight: 400;
   margin: 10px 0 14px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 .section-01 .info_wrap .concertSwiper .swiper-wrapper .swiper-slide a .info_text ul {
   font-size: 1.4rem;

@@ -203,6 +203,7 @@ button {
         display: flex;
         justify-content: space-between;
         position: relative;
+        overflow: visible;
 
         .nav_wrap {
             display: flex;
@@ -868,6 +869,9 @@ button {
                                 font-size: 1.7rem;
                                 font-weight: 400;
                                 margin: 10px 0 14px;
+                                white-space: nowrap;
+                                text-overflow: ellipsis;
+                                overflow: hidden;
                             }
 
                             ul {
