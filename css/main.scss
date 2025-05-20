@@ -300,6 +300,10 @@ button {
                 justify-content: center;
             }
 
+            .lang {
+                filter: invert(0);
+            }
+
             .depth-02 {
                 position: absolute;
                 top: 100%;
@@ -499,6 +503,7 @@ button {
 
     @media screen and (max-width:1700px) {
         padding: 80px 20px 0 60px;
+
         ul {
             li {
                 a {
@@ -511,6 +516,7 @@ button {
 
     @media screen and (max-width:1280px) {
         padding: 68px 20px 0 40px;
+
         ul {
             li {
                 a {
@@ -1180,6 +1186,7 @@ button {
             }
         }
     }
+
     @media screen and (max-width: 1700px) {
         .inner {
             .Notice {
@@ -1221,6 +1228,7 @@ button {
             .Notice {
                 max-width: 100%;
                 margin: 0;
+
                 .text {
                     a {
                         width: 50px;

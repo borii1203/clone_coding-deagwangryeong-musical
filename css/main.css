@@ -266,6 +266,9 @@ button {
   align-items: center;
   justify-content: center;
 }
+.header .inner .btn_wrap .lang {
+  filter: invert(0);
+}
 .header .inner .btn_wrap .depth-02 {
   position: absolute;
   top: 100%;
