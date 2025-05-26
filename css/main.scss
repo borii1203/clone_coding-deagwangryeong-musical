@@ -60,11 +60,6 @@ body {
     font-family: 'Pretendard';
     background-color: #F5F3EC;
     color: #111;
-
-    @media screen and (max-width:1700px) {
-        font-size: 56.25%;
-    }
-
 }
 
 body {
@@ -91,12 +86,12 @@ h3 {
     font-size: 12rem;
     font-weight: 600;
 
-    @media screen and (max-width: 1700px) {
-        font-size: 10rem;
+    @media screen and (max-width: 1350px) {
+        font-size: 6rem;
     }
 
-    @media screen and (max-width: 1350px) {
-        font-size: 6.67rem;
+    @media screen and (max-width: 1000px) {
+        font-size: 5rem;
     }
 }
 
@@ -105,7 +100,18 @@ h4 {
     font-size: 6.4rem;
     letter-spacing: -1.28px;
 
-    @media screen and (max-width: 1700px) {}
+    @media screen and (max-width: 1350px) {
+        font-size: 5.5rem;
+    }
+
+    @media screen and (max-width: 1000px) {
+        font-size: 4.5rem;
+    }
+
+    @media screen and (max-width: 900px) {
+        font-size: 4rem;
+    }
+
 }
 
 button {
@@ -124,8 +130,8 @@ button {
 
 .swiper-button-prev,
 .swiper-button-next {
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     border: 1px solid #fff;
     border-radius: 50%;
     background: url('../img/scroll_arrow.svg') center center / 50% no-repeat;
@@ -925,13 +931,38 @@ button {
         }
     }
 
-    .inner {
-        @media screen and (max-width:1700px) {
+    @media screen and (max-width:1700px) {
+        .inner {
             width: 100%;
             padding: 0 20px;
         }
     }
 
+    @media screen and (max-width:787px) {
+        .inner {
+            .date_wrap {
+                position: relative;
+                flex-wrap: wrap;
+
+                p {
+                    font-size: 3.2rem;
+                    width: 100%;
+                    margin-bottom: 20px;
+                }
+
+                a {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    height: 45px;
+                }
+
+                .calender {
+                    overflow: visible;
+                }
+            }
+        }
+    }
 }
 
 /* section-02 */
@@ -1038,6 +1069,33 @@ button {
         }
     }
 
+    @media screen and (max-width:1000px) {
+        .inner {
+            display: block;
+
+            .text {
+                position: absolute;
+                top: 50%;
+                left: 0;
+                z-index: 9;
+                height: 100vh;
+                position: relative;
+            }
+
+            .item_wrap {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+
+            a {
+                width: 80px;
+                height: 80px;
+                bottom: 250px;
+            }
+        }
+    }
 }
 
 /* section-03 */
@@ -1233,6 +1291,27 @@ button {
                     a {
                         width: 50px;
                         height: 50px;
+                    }
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width:787px) {
+        .inner {
+            .Notice {
+                .info_wrap {
+                    .info {
+                        a {
+                            p {
+                                font-size: 1.8rem;
+                                padding-left: 80px;
+                            }
+
+                            span {
+                                font-size: 1.8rem;
+                            }
+                        }
                     }
                 }
             }
@@ -1485,6 +1564,16 @@ button {
             .left {
                 .title {
                     margin-bottom: 30px;
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width: 1280px) {
+        .inner {
+            .left {
+                .footer_nav {
+                    display: none;
                 }
             }
         }
