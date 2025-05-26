@@ -1104,93 +1104,91 @@ button {
 .footer {
   background-color: #121212;
   color: #fff;
-  overflow: hidden;
 }
 .footer .inner {
-  display: flex;
+  display: grid;
+  grid-template-columns: 51.5% 48.5%;
 }
-.footer .inner .left {
-  width: 51.47%;
+.footer .inner > * {
+  position: relative;
+}
+.footer .inner .item_01 {
   padding: 115px 70px 50px 0;
-  border-right: 1px solid rgba(255, 255, 255, 0.13);
 }
-.footer .inner .left .title {
+.footer .inner .item_01 .title {
   font-size: 3rem;
   font-weight: 500;
   margin-bottom: 70px;
 }
-.footer .inner .left .footer_nav {
+.footer .inner .item_01 .footer_nav {
   padding-bottom: 60px;
 }
-.footer .inner .left .footer_nav .gnb {
+.footer .inner .item_01 .footer_nav .gnb {
   display: flex;
   justify-content: space-between;
   line-height: 1.3;
 }
-.footer .inner .left .footer_nav .gnb a {
+.footer .inner .item_01 .footer_nav .gnb a {
   display: block;
   width: 100%;
 }
-.footer .inner .left .footer_nav .gnb .depth-01 {
+.footer .inner .item_01 .footer_nav .gnb .depth-01 {
   font-size: 2rem;
   font-weight: 600;
   padding: 8px 0;
 }
-.footer .inner .left .footer_nav .gnb .depth-02 a {
+.footer .inner .item_01 .footer_nav .gnb .depth-02 a {
   display: block;
   padding: 6px 0;
   font-size: 1.6rem;
   font-weight: 300;
   color: rgba(255, 255, 255, 0.7);
 }
-.footer .inner .left .copy {
-  font-size: 1.4rem;
-  font-weight: 300;
-  color: rgba(255, 255, 255, 0.3);
-  padding-top: 50px;
-}
-.footer .inner .right {
-  width: 48.53%;
+.footer .inner .item_02 {
   padding: 115px 50px 60px 70px;
+  border-left: 1px solid rgba(255, 255, 255, 0.13);
 }
-.footer .inner .right .padding {
-  width: 100%;
-}
-.footer .inner .right .padding .R_top {
-  height: 16.48vw;
+.footer .inner .item_02 .padding {
+  position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  padding-bottom: 60px;
-  position: relative;
 }
-.footer .inner .right .padding .R_top .info > div {
+.footer .inner .item_02 .padding .info {
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  margin-bottom: 30px;
+  flex: 1 0 auto;
+}
+.footer .inner .item_02 .padding .info > div {
   display: flex;
   margin-bottom: 15px;
   font-size: 1.7rem;
 }
-.footer .inner .right .padding .R_top .info > div p {
+.footer .inner .item_02 .padding .info > div:last-child {
+  margin-bottom: 0;
+}
+.footer .inner .item_02 .padding .info > div p {
   width: 115px;
   font-weight: 400;
 }
-.footer .inner .right .padding .R_top .info > div span {
+.footer .inner .item_02 .padding .info > div span {
   font-weight: 200;
 }
-.footer .inner .right .padding .R_top ul {
+.footer .inner .item_02 .padding ul {
   display: flex;
   font-size: 1.7rem;
   font-weight: 400;
 }
-.footer .inner .right .padding .R_top ul li {
+.footer .inner .item_02 .padding ul li {
   padding: 7px 14px;
 }
-.footer .inner .right .padding .R_top ul li:first-child {
+.footer .inner .item_02 .padding ul li:first-child {
   padding-left: 0;
 }
-.footer .inner .right .padding .R_top button {
+.footer .inner .item_02 .padding button {
   position: absolute;
   right: 0;
-  top: 0;
   font-family: "Cormorant";
   font-size: 1.7rem;
   font-weight: 500;
@@ -1198,28 +1196,31 @@ button {
   writing-mode: sideways-lr;
   transform: rotate(180deg);
 }
-.footer .inner .right .padding .R_top button .btn_wrap {
-  position: relative;
+.footer .inner .item_02 .padding button .btn_wrap {
+  position: absolute;
+  top: 0;
+  right: 0;
 }
-.footer .inner .right .padding .R_top button .btn_wrap::before {
+.footer .inner .item_02 .padding button .btn_wrap::before {
   content: url("../img/scroll_arrow.svg");
   position: absolute;
   bottom: 0;
   right: 25%;
   animation: updown 1.5s infinite linear;
 }
-.footer .inner .right .padding .R_top button .btn_wrap span {
+.footer .inner .item_02 .padding button .btn_wrap span {
   display: block;
   padding: 20px;
   padding-bottom: 70px;
 }
-.footer .inner .right .padding .R_bottom {
-  padding-top: 50px;
+.footer .inner .item_03 {
+  padding: 50px 0 50px 70px;
   display: flex;
   justify-content: space-between;
-  position: relative;
+  border-left: 1px solid rgba(255, 255, 255, 0.13);
+  order: 4;
 }
-.footer .inner .right .padding .R_bottom::before {
+.footer .inner .item_03::before {
   content: "";
   display: block;
   width: 100vw;
@@ -1227,46 +1228,29 @@ button {
   background-color: rgba(255, 255, 255, 0.13);
   position: absolute;
   top: 0;
-  left: -70px;
+  left: -1px;
 }
-.footer .inner .right .padding .R_bottom ul {
+.footer .inner .item_03 ul {
   display: flex;
 }
-.footer .inner .right .padding .R_bottom ul a {
+.footer .inner .item_03 ul a {
   display: block;
   padding: 20px;
 }
-.footer .inner .right .padding .R_bottom .logo a {
+.footer .inner .item_03 .logo a {
   display: block;
   width: 150px;
 }
-.footer .inner .right .padding .R_bottom .logo a img {
+.footer .inner .item_03 .logo a img {
   width: 100%;
   height: 100%;
 }
-@media screen and (max-width: 1700px) {
-  .footer .inner .left {
-    width: 60%;
-    padding: 70px 35px 50px 0;
-  }
-  .footer .inner .left .title {
-    margin-bottom: 40px;
-  }
-  .footer .inner .right {
-    width: 40%;
-    padding: 70px 20px 35px 35px;
-  }
-  .footer .inner .right .padding .R_bottom::before {
-    left: -35px;
-  }
+.footer .inner .item_04 {
+  padding-block: 50px;
+  order: 3;
 }
-@media screen and (max-width: 1400px) {
-  .footer .inner .left .title {
-    margin-bottom: 30px;
-  }
-}
-@media screen and (max-width: 1280px) {
-  .footer .inner .left .footer_nav {
-    display: none;
-  }
+.footer .inner .item_04 .copy {
+  font-size: 1.4rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.3);
 }/*# sourceMappingURL=main.css.map */
