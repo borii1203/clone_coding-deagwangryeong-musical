@@ -1360,12 +1360,11 @@ button {
 
     .inner {
         display: grid;
+        grid-template-columns: 51.5% 48.5%;
 
         >* {
             position: relative;
         }
-
-        grid-template-columns: 51.5% 48.5%;
 
         .item_01 {
             padding: 115px 70px 50px 0;
@@ -1413,9 +1412,11 @@ button {
             border-left: 1px solid rgba(255, 255, 255, 0.13);
 
             .padding {
+                height: 100%;
                 position: relative;
                 display: flex;
                 flex-direction: column;
+                justify-content: space-between;
 
                 .info {
                     flex-direction: column;
@@ -1460,6 +1461,7 @@ button {
 
                 button {
                     position: absolute;
+                    top: 100px;
                     right: 0;
                     font-family: 'Cormorant';
                     font-size: 1.7rem;
@@ -1469,9 +1471,7 @@ button {
                     transform: rotate(180deg);
 
                     .btn_wrap {
-                        position: absolute;
-                        top: 0;
-                        right: 0;
+                        white-space: nowrap;
 
                         &::before {
                             content: url('../img/scroll_arrow.svg');
@@ -1534,6 +1534,8 @@ button {
         .item_04 {
             padding-block: 50px;
             order: 3;
+            display: flex;
+            align-items: center;
 
             .copy {
                 font-size: 1.4rem;
@@ -1541,5 +1543,119 @@ button {
                 color: rgba(255, 255, 255, 0.3);
             }
         }
+
+
+    }
+
+    @media screen and (max-width:1700px) {
+        .inner {
+
+            .item_01 {
+                padding: 70px 35px 50px;
+
+                .title {
+                    font-size: 2.6rem;
+                }
+            }
+
+            .item_02 {
+                padding: 70px 50px 50px 35px;
+            }
+
+            .item_03 {
+                padding: 35px 0 35px 35px;
+            }
+
+            .item_04 {
+                padding-block: 35px;
+            }
+        }
+    }
+
+    @media screen and (max-width:1200px) {
+        .inner {
+            grid-template-columns: repeat(1, 100%);
+
+            .item_01 {
+                padding: 0;
+                padding-top: 40px;
+
+                .title {
+                    margin-bottom: 0;
+                    font-size: 2.2rem;
+                }
+
+                .footer_nav {
+                    display: none;
+                }
+            }
+
+            .item_02 {
+                padding: 20px 50px 30px 0;
+                border-left: none;
+
+                .padding {
+                    position: static;
+
+                    .info {
+                        position: static;
+                    }
+
+                    button {
+                        top: -50px;
+                        right: -20px;
+                    }
+                }
+            }
+
+            .item_03 {
+                order: 3;
+                padding: 0;
+                padding-block: 20px;
+                border-left: none;
+
+                &::after {
+                    content: '';
+                    display: block;
+                    width: 100vw;
+                    height: 1px;
+                    background-color: rgba(255, 255, 255, 0.13);
+                    position: absolute;
+                    bottom: 0;
+                }
+
+                .sns {
+                    width: 50%;
+                    justify-content: space-around;
+                }
+
+                .logo {
+                    width: 50%;
+                    display: flex;
+                    justify-content: center;
+                    position: relative;
+
+                    &::before {
+                        content: '';
+                        display: block;
+                        width: 1px;
+                        background-color: rgba(255, 255, 255, 0.13);
+                        height: calc(100% + 40px);
+                        position: absolute;
+                        top: -20px;
+                        left: 0;
+                    }
+                }
+            }
+
+            .item_04 {
+                order: 4;
+                padding-block: 20px;
+            }
+        }
+    }
+
+    @media screen and (max-width:550px) {
+        
     }
 }
