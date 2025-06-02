@@ -124,7 +124,7 @@ $('nav .gnb > li').on('mouseenter', function () {
 
 ---
 
-### 🙍‍♂️사용자 중심 관점 (UI/UX 리뷰)
+### 🙍‍♂️ 사용자 중심 관점 (UI/UX 리뷰)
 
 <img src="https://github.com/user-attachments/assets/fddf2f78-6f7f-43d0-8b2d-bb2cccd609e2" style="width: 500px;"/>
 
@@ -133,8 +133,8 @@ $('nav .gnb > li').on('mouseenter', function () {
 
 ---
 
-### 😶개선해야할 점
-- [ ] Jquery작성시에 변수 선언 하기
-- [ ] js파일 따로 만들어서 분리하기
-- [ ] 태그에 의미 담아서 작성하기
-- [ ] header footer같은 공통요소 따로 구조 설계하기
+### 😶 개선해야할 점
+- [ ] jQuery 작성 시 변수 선언을 적극적으로 활용하기
+- [ ] JS 파일을 HTML과 분리하여 관리하기
+- [ ] 의미 있는 태그와 클래스명으로 작성하기
+- [ ] header, footer 등 공통 요소를 재사용할 수 있는 구조로 설계하기
