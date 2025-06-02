@@ -1,1 +1,14 @@
-# clone_coding-deagwangryeong-musical
+##코드 리뷰
+
+## 💻프로젝트명
+  대관령 음악제
+
+## 🛠 사용한 기술
+  HTML, SCSSS, JQUERY
+
+## 🔍self preivew
+
+#### 📁파일 구조 및 구성
+- [ ] 역할별로 디렉토리 분리(/css, /js, /images)
+- [ ] 인라인 스타일, 스크립트 제거 → 외부 파일로 분리 완료
+- [ ] 파일/폴더 네이밍 일관성 유지
