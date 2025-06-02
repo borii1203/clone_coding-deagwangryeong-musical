@@ -124,8 +124,17 @@ $('nav .gnb > li').on('mouseenter', function () {
 
 ---
 
-### 사용자 중심 관점 (UI/UX 리뷰)
+### 🙍‍♂️사용자 중심 관점 (UI/UX 리뷰)
+
+<img src="https://github.com/user-attachments/assets/fddf2f78-6f7f-43d0-8b2d-bb2cccd609e2" style="width: 500px;"/>
+
 - [x] 인터랙션(hover, click 등)이 직관적이고 자연스럽게 이루어지는가?
 - [x] 마우스/터치 등 다양한 입력 방식에 대한 대응이 있는가?
 
+---
 
+### 😶개선해야할 점
+- [ ] Jquery작성시에 변수 선언 하기
+- [ ] js파일 따로 만들어서 분리하기
+- [ ] 태그에 의미 담아서 작성하기
+- [ ] header footer같은 공통요소 따로 구조 설계하기
