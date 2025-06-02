@@ -1,9 +1,9 @@
-# 프로젝트 소개
+# 📄프로젝트 소개
 #### 💻 프로젝트명
   '대관령 음악제' 홈페이지 모작
 
 #### 🛠 사용한 기술
-  HTML, SCSSS, JQUERY
+  <img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white"> <img src="https://img.shields.io/badge/jquery-0769AD?style=for-the-badge&logo=jquery&logoColor=white"> <img src="https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=Sass&logoColor=white">
 
 #### 🎯 모작 이유
   - 마우스 커서 제어, 헤더 스타일 변경 등 다양한 jQuery 기능을 직접 구현해보고 싶었습니다.
